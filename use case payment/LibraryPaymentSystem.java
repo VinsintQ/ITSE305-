@@ -38,9 +38,5 @@ public class LibraryPaymentSystem {
         scanner.close();
 
         libraryPaymentSystem.processPayment(amount, cardNumber, expiryDate, cvv);
-
-         //no suggestion for this code 
-}
     }
 }
-

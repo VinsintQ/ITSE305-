@@ -1,15 +1,20 @@
 // Data Layer
 class PaymentGateway {
     /**
-     * Charge the specified amount.
-     *
+     * 
+     * Charge the specified amount.*
+     * 
      * @param amount Amount to be charged
+     * @throws PaymentException if payment processing fails
      */
-    public void charge(double amount) {
-        // Implement payment processing logic
-        System.out.println("Charging $" + amount);
-        // Simulate payment success
-        System.out.println("Payment processed successfully.");
+    public void charge(double amount) throws PaymentException {
+        try {// Implement payment processing logic
+            System.out.println("Charging $" + amount);// Simulate payment success
+            System.out.println("Payment processed successfully.");
+        } catch (Exception e) {// Log the exception for further investigation
+            System.err.println("Error during payment processing: " + e.getMessage());
+            throw new PaymentException("Payment processing failed.");
+        }
     }
 }
 
@@ -18,10 +23,4 @@ class PaymentException extends Exception {
     public PaymentException(String message) {
         super(message);
     }
-    // Suggestion: Consider adding more robust error handling and logging mechanisms
-// within the PaymentGateway class to handle various payment processing scenarios
-// and provide better feedback to the user or client code.
-
-
-
 }

@@ -33,17 +33,25 @@ public class PaymentService {
         paymentGateway.charge(amount);
     }
 
-  // Suggestion: Consider adding additional validation checks for expiry date
- // This can enhance the security and reliability of the payment processing.
-
     private boolean isValidCardNumber(String cardNumber) {
         // Implement card number validation logic
         return cardNumber.matches("^\\d{16}$");
     }
 
+    // Improved expiry date validation by checking if it's a valid date
     private boolean isValidExpiryDate(String expiryDate) {
-        // Implement expiry date validation logic
-        return expiryDate.matches("^([0-9]{2}/(0[1-9]|1[0-2]))$");
+        String[] parts = expiryDate.split("/");
+        if (parts.length != 2) {
+            return false;
+        }
+        int month = Integer.parseInt(parts[0]);
+        int year = Integer.parseInt(parts[1]);
+        if (month < 1 || month > 12) {
+            return false;
+        }
+        int currentYear = java.time.Year.now().getValue() % 100; // Get last two digits of current year
+        return year >= currentYear && year <= currentYear + 20; // Expiry year should be current year or within next 20
+                                                                // years
     }
 
     private boolean isValidCVV(String cvv) {
