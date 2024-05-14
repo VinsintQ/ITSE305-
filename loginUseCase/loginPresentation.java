@@ -4,45 +4,45 @@ public class loginPresentation {
 
     Scanner kb = new Scanner(System.in);
     String UserName;
-    
     String password;
     String confirmPassword;
 
-    public void displayLoginForm() {// this method is for displaying the login form
-       
+    public void displayLoginForm() { 
 
         System.out.println("Enter user name: ");
-        UserName = kb.nextLine();
- // Suggestion: Consider using trim() to remove leading and trailing spaces from input
+        UserName = kb.nextLine().trim();
+
         while (UserName.isEmpty()) {
-            System.out.println("you must enter a UserName");
-            UserName = kb.nextLine();
+            System.out.println("You must enter a UserName");
+            UserName = kb.nextLine().trim(); 
         }
-        
+
         System.out.println("Enter password: ");
-        password = kb.nextLine();
+        password = kb.nextLine().trim(); 
         while (password.isEmpty()) {
-            System.out.println("you must enter a password");
-            password = kb.nextLine();
-
+            System.out.println("You must enter a password");
+            password = kb.nextLine().trim(); 
         }
+
         System.out.println("Enter password confirmation: ");
-        // Suggestion: There is a bug here, you are assigning password input again instead of confirmPassword.
-        password = kb.nextLine();
+        confirmPassword = kb.nextLine().trim();
         while (confirmPassword.isEmpty()) {
-            System.out.println("you must enter a password confirmation");
-            confirmPassword = kb.nextLine();
-
+            System.out.println("You must enter a password confirmation");
+            confirmPassword = kb.nextLine().trim();
         }
-  // Suggestion: Add a check to ensure password and confirmPassword match
+
+        // Adding a check to ensure password and confirmPassword are the same
+        while (!password.equals(confirmPassword)) {
+            System.out.println("Passwords do not match. Please re-enter the password and confirmation.");
+            System.out.println("Enter password: ");
+            password = kb.nextLine().trim(); 
+            System.out.println("Enter password confirmation: ");
+            confirmPassword = kb.nextLine().trim(); 
+        }
     }
-    
 
     public static void main(String[] args) {
-
-      loginPresentation login1= new loginPresentation();
- // Suggestion: Call the displayLoginForm() method to display the login form      
-
+        loginPresentation login1 = new loginPresentation();
+        login1.displayLoginForm(); // Calling the displayLoginForm method to display the login form
     }
-
 }
