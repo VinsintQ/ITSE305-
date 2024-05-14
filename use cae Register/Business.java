@@ -1,29 +1,17 @@
-
 public class Business {
-    // validate inputs
-
-    // mathod validate variables is not empty
-    // Improvement suggestion: Renaming the method to 'isEmpty' for clarity
-    // and removing unnecessary if-else statement to simplify the code.
-    public boolean Empty(String V) {
-        if (V.isEmpty()) {
-
-            return true;
-        } else {
-            return false;
-        }
-
+    // Method to check if a string is empty
+    public boolean isEmpty(String str) {
+        return str.isEmpty();
     }
-    // Improvement suggestion: Renaming the method to 'NotNum' to be more descriptive,
-    // and simplifying the return statement by directly returning the result of the matches method.
-    public boolean NotNum(String Num) {
 
-        if (Num.matches("[0-9]+")) {
-            return false;
-        } else {
-            return true;
-        }
-
+    // Method to check if a string contains non-numeric characters
+    public boolean isNotNumeric(String str) {
+        return !str.matches("[0-9]+");
     }
+
+    // Renamed the method Empty to isEmpty for clarity and adherence to Java naming
+    // conventions.Simplified thelogic insideboth methods.
+    // Renamed themethod NotNumto isNotNumeric forclarity andadherence toJava naming
+    // conventions.
 
 }

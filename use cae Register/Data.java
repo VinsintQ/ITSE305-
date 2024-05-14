@@ -1,29 +1,28 @@
 public class Data {
     // Class for Saving user data
 
-
-     // Improvement suggestion: Renaming the method to 'checkIfEmailExists' for clarity,
-    // and adding a comment to clarify that this method is simulating the existence check.
-
-    
-    // this method to check if user email already used
-    public boolean isEmailExists(String email) {
+    // Method to check if email already exists in the database
+    // This method simulates the existence check.
+    public boolean checkIfEmailExists(String email) {
         // Simulating user existence check
         return email.equals("existingUser@example.com");
-
     }
 
     boolean success;
 
-    // method to save user data to dataBase
+    // Method to save user data to the database
     // In a real-world scenario, you would perform database operations here
-    public void SaveData(String N, String E, String P, String PN) {
-        String Name = N;
-        String email = E;
-        String password = P;
-        String phoneNumber = PN;
-        System.out.println("Saved Succssfully to DB");
+    public void saveData(String name, String email, String password, String phoneNumber) {
+        System.out.println("Saved Successfully to DB");
         success = true;
     }
+
+    // Renamed the method isEmailExiststo checkIfEmailExists forclarity andadherence
+    // toJava naming conventions.
+    // Added a comment to clarify that the checkIfEmailExists method simulates an
+    // existence check.
+    // Renamed the method SaveDatato saveData for clarity and adherence toJava
+    // naming conventions.
+    // Removed unnecessarylocal variable assignments since they were not used.
 
 }
