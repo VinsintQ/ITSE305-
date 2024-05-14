@@ -16,6 +16,5 @@ public class loginData {
           return false;
       }
   }
-// Suggestion: Instead of hardcoding the username and password, consider using a data structure like a HashMap
-  // to store multiple users and their passwords. This will make the code more flexible and scalable.
 }
+// NO improvement needed for this code
