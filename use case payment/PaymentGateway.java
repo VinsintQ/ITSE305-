@@ -18,4 +18,10 @@ class PaymentException extends Exception {
     public PaymentException(String message) {
         super(message);
     }
+    // Suggestion: Consider adding more robust error handling and logging mechanisms
+// within the PaymentGateway class to handle various payment processing scenarios
+// and provide better feedback to the user or client code.
+
+
+
 }
