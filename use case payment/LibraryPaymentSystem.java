@@ -38,6 +38,11 @@ public class LibraryPaymentSystem {
         scanner.close();
 
         libraryPaymentSystem.processPayment(amount, cardNumber, expiryDate, cvv);
+
+         // Suggestion: Consider adding validation checks for user input to ensure
+    // that the provided credit card number, expiry date, and CVV are in the
+    // correct format and within acceptable ranges.
+}
     }
 }
 
