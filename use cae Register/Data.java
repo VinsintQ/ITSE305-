@@ -1,6 +1,11 @@
 public class Data {
     // Class for Saving user data
 
+
+     // Improvement suggestion: Renaming the method to 'checkIfEmailExists' for clarity,
+    // and adding a comment to clarify that this method is simulating the existence check.
+
+    
     // this method to check if user email already used
     public boolean isEmailExists(String email) {
         // Simulating user existence check
