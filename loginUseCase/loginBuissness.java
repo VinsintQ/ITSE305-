@@ -8,7 +8,7 @@ public class loginBuissness {
       return username.matches(regex);
   }
   public boolean isValidPassword(String password) {
-     // Suggestion: Compile the regular expression as a Pattern object for better performance.\
+     // Suggestion: Compile the regular expression as a Pattern object for better performance.
       String regex = "^.{8,16}$";
 
       // Check if the password matches the regular expression
