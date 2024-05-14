@@ -1,6 +1,7 @@
 
 // PresentationView.java
 import java.util.Scanner;
+// no suggestion for this piece of code , it does all what its supposed to do in the right way
 
 public class PresentationView {
 
