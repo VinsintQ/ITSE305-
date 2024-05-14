@@ -17,20 +17,20 @@ public class PresentationView {
         System.out.println("Enter name: ");
         name = kb.nextLine();
 
-        while (p1.Empty(name)) {
+        while (p1.isEmpty(name)) {
             System.out.println("you must enter a name");
             name = kb.nextLine();
         }
         System.out.println("Enter email: ");
         email = kb.nextLine();
-        while (p1.Empty(email)) {
+        while (p1.isEmpty(email)) {
             System.out.println("you must enter  email");
             email = kb.nextLine();
 
         }
         System.out.println("Enter password: ");
         password = kb.nextLine();
-        while (p1.Empty(password)) {
+        while (p1.isEmpty(password)) {
             System.out.println("you must enter a password");
             password = kb.nextLine();
 
@@ -39,8 +39,8 @@ public class PresentationView {
         System.out.println("'optional'" + "Enter phone number: ");
         phoneNumber = kb.nextLine();
         // if phone number not empty it must be just numbers no chars
-        if (p1.Empty(phoneNumber) == false) {
-            while (p1.NotNum(phoneNumber)) {
+        if (p1.isEmpty(phoneNumber) == false) {
+            while (p1.isNotNumeric(phoneNumber)) {
                 System.out.println("must only use numbers here");
                 phoneNumber = kb.nextLine();
             }
@@ -55,11 +55,11 @@ public class PresentationView {
         Data D1 = new Data();
 
         // checking for email if already exist
-        if (D1.isEmailExists(presentationView1.email)) {
+        if (D1.checkIfEmailExists(presentationView1.email)) {
 
             System.out.println("THis email already registered");
         } else {
-            D1.SaveData(presentationView1.name, presentationView1.email, presentationView1.password,
+            D1.saveData(presentationView1.name, presentationView1.email, presentationView1.password,
                     presentationView1.password);
 
             // if User registered successfully Show the Message
