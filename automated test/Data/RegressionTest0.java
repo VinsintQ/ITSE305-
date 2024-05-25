@@ -1,0 +1,873 @@
+
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class RegressionTest0 {
+
+  public static boolean debug = false;
+
+  @Test
+  public void test01() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test01"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    boolean b12 = data0.checkIfEmailExists("hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+
+  }
+
+  @Test
+  public void test02() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test02"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    boolean b9 = data0.checkIfEmailExists("hi!");
+    boolean b11 = data0.checkIfEmailExists("");
+    data0.saveData("", "hi!", "", "hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b9 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b11 == false);
+
+  }
+
+  @Test
+  public void test03() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test03"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b17 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b17 == false);
+
+  }
+
+  @Test
+  public void test04() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test04"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "hi!", "");
+    boolean b22 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b22 == false);
+
+  }
+
+  @Test
+  public void test05() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test05"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("", "hi!", "", "hi!");
+    boolean b17 = data0.checkIfEmailExists("hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b17 == false);
+
+  }
+
+  @Test
+  public void test06() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test06"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("", "hi!", "", "hi!");
+    boolean b17 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b17 == false);
+
+  }
+
+  @Test
+  public void test07() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test07"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "", "", "");
+    data0.saveData("", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    data0.saveData("", "hi!", "", "hi!");
+
+  }
+
+  @Test
+  public void test08() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test08"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b12 = data0.checkIfEmailExists("hi!");
+    boolean b14 = data0.checkIfEmailExists("");
+    boolean b16 = data0.checkIfEmailExists("hi!");
+    boolean b18 = data0.checkIfEmailExists("");
+    boolean b20 = data0.checkIfEmailExists("hi!");
+    boolean b22 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b14 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b16 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b18 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b20 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b22 == false);
+
+  }
+
+  @Test
+  public void test09() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test09"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b12 = data0.checkIfEmailExists("hi!");
+    boolean b14 = data0.checkIfEmailExists("");
+    boolean b16 = data0.checkIfEmailExists("hi!");
+    data0.saveData("hi!", "", "", "hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b14 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b16 == false);
+
+  }
+
+  @Test
+  public void test10() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test10"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b12 = data0.checkIfEmailExists("hi!");
+    boolean b14 = data0.checkIfEmailExists("");
+    data0.saveData("hi!", "", "hi!", "");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b14 == false);
+
+  }
+
+  @Test
+  public void test11() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test11"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "", "hi!");
+
+  }
+
+  @Test
+  public void test12() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test12"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    boolean b12 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+
+  }
+
+  @Test
+  public void test13() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test13"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    data0.saveData("", "", "hi!", "hi!");
+    data0.saveData("hi!", "", "hi!", "");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+
+  }
+
+  @Test
+  public void test14() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test14"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "hi!", "hi!");
+    boolean b12 = data0.checkIfEmailExists("hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+
+  }
+
+  @Test
+  public void test15() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test15"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "", "hi!");
+    boolean b7 = data0.checkIfEmailExists("hi!");
+    data0.saveData("hi!", "", "hi!", "");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+
+  }
+
+  @Test
+  public void test16() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test16"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "", "hi!");
+    boolean b7 = data0.checkIfEmailExists("hi!");
+    boolean b9 = data0.checkIfEmailExists("hi!");
+    data0.saveData("hi!", "hi!", "hi!", "hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b9 == false);
+
+  }
+
+  @Test
+  public void test17() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test17"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b12 = data0.checkIfEmailExists("hi!");
+    boolean b14 = data0.checkIfEmailExists("");
+    data0.saveData("", "", "", "");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b14 == false);
+
+  }
+
+  @Test
+  public void test18() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test18"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "hi!", "hi!");
+    data0.saveData("", "hi!", "hi!", "hi!");
+    data0.saveData("hi!", "", "hi!", "hi!");
+
+  }
+
+  @Test
+  public void test19() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test19"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    data0.saveData("", "", "", "");
+    data0.saveData("", "", "hi!", "hi!");
+
+  }
+
+  @Test
+  public void test20() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test20"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    data0.saveData("", "", "", "");
+    boolean b32 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b32 == false);
+
+  }
+
+  @Test
+  public void test21() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test21"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    boolean b9 = data0.checkIfEmailExists("hi!");
+    data0.saveData("", "hi!", "hi!", "hi!");
+    boolean b16 = data0.checkIfEmailExists("");
+    data0.saveData("hi!", "", "", "");
+    boolean b23 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b9 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b16 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b23 == false);
+
+  }
+
+  @Test
+  public void test22() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test22"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b17 = data0.checkIfEmailExists("hi!");
+    data0.saveData("", "hi!", "hi!", "hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b17 == false);
+
+  }
+
+  @Test
+  public void test23() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test23"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    data0.saveData("hi!", "", "hi!", "hi!");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b19 = data0.checkIfEmailExists("hi!");
+    data0.saveData("", "", "hi!", "hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b19 == false);
+
+  }
+
+  @Test
+  public void test24() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test24"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    boolean b9 = data0.checkIfEmailExists("hi!");
+    data0.saveData("", "hi!", "hi!", "hi!");
+    boolean b16 = data0.checkIfEmailExists("");
+    data0.saveData("", "", "", "hi!");
+    boolean b23 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b9 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b16 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b23 == false);
+
+  }
+
+  @Test
+  public void test25() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test25"); }
+
+    Data data0 = new Data();
+    data0.saveData("", "", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    data0.saveData("hi!", "", "", "");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+
+  }
+
+  @Test
+  public void test26() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test26"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    data0.saveData("hi!", "", "hi!", "hi!");
+    boolean b14 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b14 == false);
+
+  }
+
+  @Test
+  public void test27() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test27"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "hi!", "");
+    data0.saveData("hi!", "hi!", "", "hi!");
+    data0.saveData("", "", "hi!", "hi!");
+
+  }
+
+  @Test
+  public void test28() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test28"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    boolean b9 = data0.checkIfEmailExists("hi!");
+    data0.saveData("", "hi!", "hi!", "hi!");
+    boolean b16 = data0.checkIfEmailExists("");
+    data0.saveData("hi!", "", "", "");
+    boolean b23 = data0.checkIfEmailExists("hi!");
+    boolean b25 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b9 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b16 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b23 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b25 == false);
+
+  }
+
+  @Test
+  public void test29() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test29"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "", "hi!");
+    boolean b7 = data0.checkIfEmailExists("hi!");
+    data0.saveData("hi!", "", "hi!", "hi!");
+    boolean b14 = data0.checkIfEmailExists("hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b14 == false);
+
+  }
+
+  @Test
+  public void test30() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test30"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "", "hi!");
+    data0.saveData("", "", "hi!", "hi!");
+    boolean b12 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+
+  }
+
+  @Test
+  public void test31() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test31"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b12 = data0.checkIfEmailExists("hi!");
+    boolean b14 = data0.checkIfEmailExists("");
+    boolean b16 = data0.checkIfEmailExists("hi!");
+    boolean b18 = data0.checkIfEmailExists("");
+    boolean b20 = data0.checkIfEmailExists("hi!");
+    boolean b22 = data0.checkIfEmailExists("hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b14 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b16 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b18 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b20 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b22 == false);
+
+  }
+
+  @Test
+  public void test32() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test32"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "", "", "");
+    data0.saveData("", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b17 = data0.checkIfEmailExists("hi!");
+    boolean b19 = data0.checkIfEmailExists("");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b17 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b19 == false);
+
+  }
+
+  @Test
+  public void test33() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test33"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("", "", "", "");
+    boolean b22 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b22 == false);
+
+  }
+
+  @Test
+  public void test34() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test34"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b27 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b27 == false);
+
+  }
+
+  @Test
+  public void test35() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test35"); }
+
+    Data data0 = new Data();
+    data0.saveData("", "", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    boolean b9 = data0.checkIfEmailExists("hi!");
+    boolean b11 = data0.checkIfEmailExists("hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b9 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b11 == false);
+
+  }
+
+  @Test
+  public void test36() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test36"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "", "", "");
+    data0.saveData("", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    data0.saveData("", "", "hi!", "hi!");
+
+  }
+
+  @Test
+  public void test37() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test37"); }
+
+    Data data0 = new Data();
+    data0.saveData("", "", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("hi!");
+    data0.saveData("hi!", "", "", "hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+
+  }
+
+  @Test
+  public void test38() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test38"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b17 = data0.checkIfEmailExists("hi!");
+    data0.saveData("hi!", "hi!", "hi!", "hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b17 == false);
+
+  }
+
+  @Test
+  public void test39() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test39"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    data0.saveData("", "", "hi!", "hi!");
+    boolean b14 = data0.checkIfEmailExists("");
+    boolean b16 = data0.checkIfEmailExists("hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b14 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b16 == false);
+
+  }
+
+  @Test
+  public void test40() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test40"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "", "", "");
+    data0.saveData("", "hi!", "hi!", "");
+    boolean b12 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+
+  }
+
+  @Test
+  public void test41() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test41"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    boolean b12 = data0.checkIfEmailExists("hi!");
+    data0.saveData("", "", "", "");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b12 == false);
+
+  }
+
+  @Test
+  public void test42() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test42"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "", "hi!");
+    boolean b7 = data0.checkIfEmailExists("hi!");
+    data0.saveData("", "", "", "");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+
+  }
+
+  @Test
+  public void test43() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test43"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    data0.saveData("", "hi!", "", "");
+    data0.saveData("", "", "", "hi!");
+    boolean b27 = data0.checkIfEmailExists("");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b27 == false);
+
+  }
+
+  @Test
+  public void test44() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test44"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "hi!", "hi!", "");
+    boolean b7 = data0.checkIfEmailExists("");
+    boolean b9 = data0.checkIfEmailExists("hi!");
+    data0.saveData("", "hi!", "hi!", "hi!");
+    boolean b16 = data0.checkIfEmailExists("");
+    data0.saveData("hi!", "", "", "");
+    data0.saveData("hi!", "hi!", "hi!", "");
+    data0.saveData("hi!", "", "", "hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b7 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b9 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b16 == false);
+
+  }
+
+  @Test
+  public void test45() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test45"); }
+
+    Data data0 = new Data();
+    data0.saveData("hi!", "", "", "");
+    data0.saveData("", "hi!", "hi!", "");
+    data0.saveData("", "hi!", "", "hi!");
+    boolean b17 = data0.checkIfEmailExists("");
+    boolean b19 = data0.checkIfEmailExists("");
+    boolean b21 = data0.checkIfEmailExists("");
+    data0.saveData("", "", "", "hi!");
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b17 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b19 == false);
+    
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue(b21 == false);
+
+  }
+
+}
